@@ -33,6 +33,13 @@ function agregarAmigo() {
   const li = document.createElement("li");
   li.textContent = nombre;
 
+  //extra - eliminar nombre con clic
+  li.addEventListener("click", () => {
+    const index = nombre.indexOf(nombre);
+    amigos.splice(index, 1);
+    li.remove();
+  });
+
   lista.appendChild(li);
   capturaNombre.value = "";
 }
