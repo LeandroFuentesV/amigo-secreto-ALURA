@@ -17,7 +17,7 @@ function agregarAmigo() {
 
   //verifica si el campo esta vacio
   if (nombre === "") {
-    alert("Debes ingresar un nombre");
+    alert("Por favor, inserte un nombre");
     return; //detiene para que no siga el codigo
   }
   //verifica si existe el nombre
@@ -35,4 +35,19 @@ function agregarAmigo() {
 
   lista.appendChild(li);
   capturaNombre.value = "";
+}
+
+//actualizar lista de amigos
+function actualizarLista() {
+  const lista = document.getElementById("listaAmigos");
+
+  //limpiar lista en el DOM
+  lista.innerHTML = "";
+
+  //recorre el array
+  for (let index = 0; index < amigos.length; index++) {
+    const li = document.createElement("li"); //nuevo elemento en lista
+    li.textContent = amigos[index]; //asigna nombre
+    lista.appendChild(li); //agrega al DOM
+  }
 }
